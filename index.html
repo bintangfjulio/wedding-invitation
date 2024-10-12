@@ -52,9 +52,9 @@
         font-size: 18px;
       }
 
-      /* main {
+      main {
         display: none;
-      } */
+      }
 
       .title {
         font-family: latin;
@@ -185,7 +185,7 @@
     </style>
   </head>
   <body data-theme="cupcake" class="min-h-screen">
-    <!-- <div
+    <div
       class="hero min-h-screen"
       style="background-image: url('assets/images/hero.jpg')"
     >
@@ -209,7 +209,7 @@
           </button>
         </div>
       </div>
-    </div> -->
+    </div>
 
     <main>
       <section id="undangan">
@@ -375,7 +375,7 @@
         </ul>
       </section>
 
-      <!-- <div class="btm-nav btm-nav-sm">
+      <div class="btm-nav btm-nav-sm">
         <button data-section="undangan" class="active">
           <i class="fa-solid fa-envelope"></i>
           <span class="btm-nav-label">Undangan</span>
@@ -392,7 +392,7 @@
           <i class="fa-solid fa-comments"></i>
           <span class="btm-nav-label">Ucapan</span>
         </button>
-      </div> -->
+      </div>
     </main>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -403,99 +403,99 @@
     <script>
       AOS.init();
 
-      // var invited = new Typed("#invited", {
-      //   strings: ["John Doe dan Partner"],
-      //   typeSpeed: 20,
-      //   startDelay: 1500,
-      // });
+      var invited = new Typed("#invited", {
+        strings: ["John Doe dan Partner"],
+        typeSpeed: 20,
+        startDelay: 1500,
+      });
 
-      // $(".open").click(function () {
-      //   $(".hero").fadeOut(500);
-      //   $("main").css("display", "block");
-      //   startCountdown();
-      // });
+      $(".open").click(function () {
+        $(".hero").fadeOut(500);
+        $("main").css("display", "block");
+        startCountdown();
+      });
 
-      // $("#saveDate").click(function () {
-      //   const title = "Undangan Pernikahan: Bintang Fajar Julio & Someone";
-      //   const startDate = "20241014T090000";
-      //   const endDate = "20241014T200000";
-      //   const description = "Momen bahagia, jangan sampai terlewat!";
-      //   const location = "Jl. Raya Pekalongan - Pekalongan - Kota Pekalongan";
-      //   const timezone = "Asia/Jakarta";
+      $("#saveDate").click(function () {
+        const title = "Undangan Pernikahan: Bintang Fajar Julio & Someone";
+        const startDate = "20241014T090000";
+        const endDate = "20241014T200000";
+        const description = "Momen bahagia, jangan sampai terlewat!";
+        const location = "Jl. Raya Pekalongan - Pekalongan - Kota Pekalongan";
+        const timezone = "Asia/Jakarta";
 
-      //   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-      //     title
-      //   )}&dates=${startDate}/${endDate}&details=${encodeURIComponent(
-      //     description
-      //   )}&location=${encodeURIComponent(location)}&ctz=${encodeURIComponent(
-      //     timezone
-      //   )}`;
+        const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+          title
+        )}&dates=${startDate}/${endDate}&details=${encodeURIComponent(
+          description
+        )}&location=${encodeURIComponent(location)}&ctz=${encodeURIComponent(
+          timezone
+        )}`;
 
-      //   window.open(googleCalendarUrl, "_blank");
-      // });
+        window.open(googleCalendarUrl, "_blank");
+      });
 
-      // function startCountdown() {
-      //   const weddingDate = new Date("2024-10-14T09:00:00+07:00").getTime();
-      //   const countdownInterval = setInterval(function () {
-      //     const now = new Date().getTime();
-      //     const distance = weddingDate - now;
+      function startCountdown() {
+        const weddingDate = new Date("2024-10-14T09:00:00+07:00").getTime();
+        const countdownInterval = setInterval(function () {
+          const now = new Date().getTime();
+          const distance = weddingDate - now;
 
-      //     if (distance < 0) {
-      //       clearInterval(countdownInterval);
-      //       $(".flex.gap-5.justify-center").html(
-      //         "<h2 class='font-bold'>Acara telah berlangsung.</h2>"
-      //       );
-      //     } else {
-      //       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      //       const hours = Math.floor(
-      //         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      //       );
-      //       const minutes = Math.floor(
-      //         (distance % (1000 * 60 * 60)) / (1000 * 60)
-      //       );
-      //       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          if (distance < 0) {
+            clearInterval(countdownInterval);
+            $(".flex.gap-5.justify-center").html(
+              "<h2 class='font-bold'>Acara telah berlangsung.</h2>"
+            );
+          } else {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+              (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            const minutes = Math.floor(
+              (distance % (1000 * 60 * 60)) / (1000 * 60)
+            );
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      //       $("#days").text(days);
-      //       $("#hours").text(hours);
-      //       $("#minutes").text(minutes);
-      //       $("#seconds").text(seconds);
-      //     }
-      //   }, 1000);
-      // }
+            $("#days").text(days);
+            $("#hours").text(hours);
+            $("#minutes").text(minutes);
+            $("#seconds").text(seconds);
+          }
+        }, 1000);
+      }
 
-      // $(".btm-nav button").on("click", function () {
-      //   const sectionId = $(this).data("section");
-      //   $("html, body").animate(
-      //     {
-      //       scrollTop: $("#" + sectionId).offset().top,
-      //     },
-      //     500
-      //   );
-      // });
+      $(".btm-nav button").on("click", function () {
+        const sectionId = $(this).data("section");
+        $("html, body").animate(
+          {
+            scrollTop: $("#" + sectionId).offset().top,
+          },
+          500
+        );
+      });
 
-      // $(window).on("scroll", function () {
-      //   let currentSection = "";
+      $(window).on("scroll", function () {
+        let currentSection = "";
 
-      //   $(".btm-nav button").each(function () {
-      //     const sectionId = $(this).data("section");
-      //     const sectionTop = $("#" + sectionId).offset().top;
-      //     const sectionHeight = $("#" + sectionId).outerHeight();
-      //     const scrollPosition = $(window).scrollTop();
-      //     const windowHeight = $(window).height();
+        $(".btm-nav button").each(function () {
+          const sectionId = $(this).data("section");
+          const sectionTop = $("#" + sectionId).offset().top;
+          const sectionHeight = $("#" + sectionId).outerHeight();
+          const scrollPosition = $(window).scrollTop();
+          const windowHeight = $(window).height();
 
-      //     if (
-      //       scrollPosition >= sectionTop - windowHeight / 2 &&
-      //       scrollPosition < sectionTop + sectionHeight - windowHeight / 2
-      //     ) {
-      //       currentSection = sectionId;
-      //     }
-      //   });
+          if (
+            scrollPosition >= sectionTop - windowHeight / 2 &&
+            scrollPosition < sectionTop + sectionHeight - windowHeight / 2
+          ) {
+            currentSection = sectionId;
+          }
+        });
 
-      //   $(".btm-nav button").removeClass("active");
-      //   $(`.btm-nav button[data-section="${currentSection}"]`).addClass(
-      //     "active"
-      //   );
-      // });
+        $(".btm-nav button").removeClass("active");
+        $(`.btm-nav button[data-section="${currentSection}"]`).addClass(
+          "active"
+        );
+      });
 
       const slides = document.querySelectorAll(".slider");
       const buttons = document.querySelectorAll(".slider-btn");

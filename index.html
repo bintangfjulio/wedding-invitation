@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Invitation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      @font-face {
+        font-family: "latin";
+        src: url("assets/fonts/AlexBrush-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      .glassmorph {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .glassmorph h1 {
+        font-family: latin;
+        font-size: 48px;
+      }
+
+      .invitation {
+        font-size: 19px;
+      }
+
+      .separator {
+        font-size: 36px;
+      }
+
+      .fa-envelope-open {
+        font-size: 18px;
+      }
+
+      /* main {
+        display: none;
+      } */
+
+      .title {
+        font-family: latin;
+        font-size: 48px;
+        text-align: center;
+      }
+
+      .title-white {
+        color: white;
+        font-size: 40px;
+        font-family: latin;
+        text-align: center;
+      }
+
+      .medium {
+        font-size: 44px;
+      }
+
+      .date {
+        text-align: center;
+        font-size: 21px;
+      }
+
+      .open:hover {
+        transform: translateY(-3px);
+      }
+
+      #mempelai {
+        background-color: #212529;
+      }
+
+      .salam {
+        color: white;
+        text-align: center;
+        font-size: 28px;
+        font-family: latin;
+      }
+
+      .latin-white {
+        font-family: latin;
+        color: white;
+        text-align: center;
+        font-size: 36px;
+      }
+
+      .text-white {
+        color: white;
+        text-align: center;
+        font-size: 17px;
+      }
+
+      .prolog {
+        text-align: center;
+        color: white;
+        font-size: 15px;
+      }
+
+      #galeri {
+        margin-bottom: -60px;
+      }
+
+      @media screen and (max-width: 480px) {
+        #galeri {
+          margin-bottom: -160px;
+        }
+        .glassmorph h1 {
+          font-family: latin;
+          font-size: 36px;
+        }
+
+        .invitation {
+          font-size: 15px;
+        }
+
+        .separator {
+          font-size: 24px;
+        }
+
+        .open {
+          font-size: 12px;
+        }
+
+        .fa-envelope-open {
+          font-size: 14px;
+        }
+      }
+
+      .image-slider {
+        position: relative;
+        width: 580px;
+        height: 426px;
+      }
+      .slider {
+        width: 100%;
+        position: absolute;
+        clip-path: circle(0% at 0 50%);
+      }
+
+      .slider.active {
+        clip-path: circle(150% at 0 50%);
+        transition: 2s;
+        transition-property: clip-path;
+      }
+
+      .slider-btn.active {
+        background-color: #212529;
+      }
+
+      .slider img {
+        width: 100%;
+        border-radius: 15px;
+      }
+      .navigation {
+        position: absolute;
+        display: flex;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .slider-btn {
+        background-color: rgb(151, 151, 151);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 0 5px;
+      }
+    </style>
+  </head>
+  <body data-theme="cupcake" class="min-h-screen">
+    <!-- <div
+      class="hero min-h-screen"
+      style="background-image: url('assets/images/hero.jpg')"
+    >
+      <div class="hero-overlay bg-opacity-60"></div>
+      <div class="hero-content text-neutral-content text-center">
+        <div
+          class="card glassmorph px-16 py-8"
+          data-aos="flip-right"
+          data-aos-duration="2000"
+        >
+          <h1 class="mb-5 text-5xl font-bold">
+            Bintang Fajar Julio<br /><span class="separator">&</span
+            ><br />Someone
+          </h1>
+          <p class="invitation">
+            <b>Kepada Yth:</b><br />
+            <span id="invited"></span>
+          </p>
+          <button class="btn mt-6 open">
+            <i class="fa-solid fa-envelope-open"></i>&nbsp; Buka Undangan
+          </button>
+        </div>
+      </div>
+    </div> -->
+
+    <main>
+      <section id="undangan">
+        <h1 class="title pt-4" id="beranda">Undangan Pernikahan</h1>
+
+        <div class="avatar flex justify-center">
+          <div
+            class="ring-neutral ring-offset-base-100 w-56 rounded-full ring ring-offset-2 mt-5"
+          >
+            <img src="assets/images/avatar.jpeg" />
+          </div>
+        </div>
+
+        <h1 class="title mt-5 medium">
+          Bintang Fajar Julio<br />&<br />Someone
+        </h1>
+        <h1 class="date mt-2">Senin, 14 Oktober 2024</h1>
+
+        <div class="flex gap-5 justify-center mt-3">
+          <div>
+            <span class="countdown font-mono text-4xl" id="days"></span> hari
+          </div>
+          <div>
+            <span class="countdown font-mono text-4xl" id="hours"></span> jam
+          </div>
+          <div>
+            <span class="countdown font-mono text-4xl" id="minutes"></span>
+            menit
+          </div>
+          <div>
+            <span class="countdown font-mono text-4xl" id="seconds"></span>
+            detik
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-4">
+          <button class="btn btn-neutral btn-outline" id="saveDate">
+            <i class="fa-solid fa-calendar"></i>&nbsp; Simpan Tanggal
+          </button>
+        </div>
+      </section>
+
+      <section id="mempelai">
+        <p class="latin-white mt-8 pt-8">
+          بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+        </p>
+        <p class="salam">Assalamualaikum Warahmatullahi Wabarakatuh</p>
+        <p class="prolog mt-3">
+          Dengan hormat, kami mengundang Bapak/Ibu/Saudara/i serta kerabat
+          sekalian untuk menghadiri acara pernikahan kami:
+        </p>
+
+        <div data-aos="fade-right" data-aos-duration="3000">
+          <div class="avatar flex justify-center mt-8">
+            <div class="ring-white w-56 rounded-full ring">
+              <img src="assets/images/foto-akhi.png" />
+            </div>
+          </div>
+          <p class="latin-white mt-3">Bintang Fajar Julio</p>
+          <p class="text-white">Putra Kedua dari Bapak X & Ibu Y</p>
+        </div>
+
+        <p
+          class="my-6"
+          style="
+            color: white;
+            text-align: center;
+            font-family: latin;
+            font-size: 32px;
+          "
+        >
+          &
+        </p>
+
+        <div data-aos="fade-left" data-aos-duration="3000">
+          <div class="avatar flex justify-center mt-8">
+            <div class="ring-white w-56 rounded-full ring">
+              <img src="assets/images/foto-ukhti.png" />
+            </div>
+          </div>
+          <p class="latin-white mt-3">Someone</p>
+          <p class="text-white pb-8">Putri Kedua dari Bapak X & Ibu Y</p>
+        </div>
+      </section>
+
+      <section id="galeri">
+        <p class="title mt-5">Galeri</p>
+
+        <div class="flex justify-center p-2">
+          <div class="image-slider">
+            <div class="slider active">
+              <img src="assets/images/game-development.jpg" />
+            </div>
+            <div class="slider">
+              <img src="assets/images/apps.jpg" />
+            </div>
+            <div class="slider">
+              <img src="assets/images/web-design.jpg" />
+            </div>
+            <div class="slider">
+              <img src="assets/images/web-development.jpg" />
+            </div>
+            <div class="slider">
+              <img src="assets/images/kids-programming.jpg" />
+            </div>
+
+            <div class="navigation">
+              <div class="slider-btn active"></div>
+              <div class="slider-btn"></div>
+              <div class="slider-btn"></div>
+              <div class="slider-btn"></div>
+              <div class="slider-btn"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="lokasi">
+        <p class="title mt-8">Lokasi</p>
+
+        <div class="flex justify-center p-2">
+          <div class="mockup-browser border-base-300 border">
+            <div class="mockup-browser-toolbar">
+              <div class="input border-base-300 border">
+                https://maps.google.com
+              </div>
+            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15867.692325697926!2d106.92810237407687!3d-6.141034809795523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b5514ec810b%3A0x10ad54fd1925c270!2sPT.%20Seacon%20Bintang%20Sejahtera%20(Jakarta%20Branch)!5e0!3m2!1sid!2sid!4v1728219444208!5m2!1sid!2sid"
+              width="600"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+        <p class="title mt-8 mb-2">Acara</p>
+
+        <ul class="timeline timeline-vertical">
+          <li>
+            <div class="timeline-start timeline-box text-center">
+              08:00 - 09:00<br />Ijab Kabul
+            </div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-end timeline-box text-center">
+              09:30 - 16:00<br />Resepsi
+            </div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-start timeline-box text-center">
+              16:00 - 16:30<br />Penutupan
+            </div>
+            <hr />
+          </li>
+        </ul>
+      </section>
+
+      <!-- <div class="btm-nav btm-nav-sm">
+        <button data-section="undangan" class="active">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="btm-nav-label">Undangan</span>
+        </button>
+        <button data-section="mempelai">
+          <i class="fa-solid fa-heart"></i>
+          <span class="btm-nav-label">Mempelai</span>
+        </button>
+        <button data-section="lokasi">
+          <i class="fa-solid fa-location-dot"></i>
+          <span class="btm-nav-label">Lokasi</span>
+        </button>
+        <button data-section="ucapan">
+          <i class="fa-solid fa-comments"></i>
+          <span class="btm-nav-label">Ucapan</span>
+        </button>
+      </div> -->
+    </main>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      AOS.init();
+
+      // var invited = new Typed("#invited", {
+      //   strings: ["John Doe dan Partner"],
+      //   typeSpeed: 20,
+      //   startDelay: 1500,
+      // });
+
+      // $(".open").click(function () {
+      //   $(".hero").fadeOut(500);
+      //   $("main").css("display", "block");
+      //   startCountdown();
+      // });
+
+      // $("#saveDate").click(function () {
+      //   const title = "Undangan Pernikahan: Bintang Fajar Julio & Someone";
+      //   const startDate = "20241014T090000";
+      //   const endDate = "20241014T200000";
+      //   const description = "Momen bahagia, jangan sampai terlewat!";
+      //   const location = "Jl. Raya Pekalongan - Pekalongan - Kota Pekalongan";
+      //   const timezone = "Asia/Jakarta";
+
+      //   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+      //     title
+      //   )}&dates=${startDate}/${endDate}&details=${encodeURIComponent(
+      //     description
+      //   )}&location=${encodeURIComponent(location)}&ctz=${encodeURIComponent(
+      //     timezone
+      //   )}`;
+
+      //   window.open(googleCalendarUrl, "_blank");
+      // });
+
+      // function startCountdown() {
+      //   const weddingDate = new Date("2024-10-14T09:00:00+07:00").getTime();
+      //   const countdownInterval = setInterval(function () {
+      //     const now = new Date().getTime();
+      //     const distance = weddingDate - now;
+
+      //     if (distance < 0) {
+      //       clearInterval(countdownInterval);
+      //       $(".flex.gap-5.justify-center").html(
+      //         "<h2 class='font-bold'>Acara telah berlangsung.</h2>"
+      //       );
+      //     } else {
+      //       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      //       const hours = Math.floor(
+      //         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      //       );
+      //       const minutes = Math.floor(
+      //         (distance % (1000 * 60 * 60)) / (1000 * 60)
+      //       );
+      //       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      //       $("#days").text(days);
+      //       $("#hours").text(hours);
+      //       $("#minutes").text(minutes);
+      //       $("#seconds").text(seconds);
+      //     }
+      //   }, 1000);
+      // }
+
+      // $(".btm-nav button").on("click", function () {
+      //   const sectionId = $(this).data("section");
+      //   $("html, body").animate(
+      //     {
+      //       scrollTop: $("#" + sectionId).offset().top,
+      //     },
+      //     500
+      //   );
+      // });
+
+      // $(window).on("scroll", function () {
+      //   let currentSection = "";
+
+      //   $(".btm-nav button").each(function () {
+      //     const sectionId = $(this).data("section");
+      //     const sectionTop = $("#" + sectionId).offset().top;
+      //     const sectionHeight = $("#" + sectionId).outerHeight();
+      //     const scrollPosition = $(window).scrollTop();
+      //     const windowHeight = $(window).height();
+
+      //     if (
+      //       scrollPosition >= sectionTop - windowHeight / 2 &&
+      //       scrollPosition < sectionTop + sectionHeight - windowHeight / 2
+      //     ) {
+      //       currentSection = sectionId;
+      //     }
+      //   });
+
+      //   $(".btm-nav button").removeClass("active");
+      //   $(`.btm-nav button[data-section="${currentSection}"]`).addClass(
+      //     "active"
+      //   );
+      // });
+
+      const slides = document.querySelectorAll(".slider");
+      const buttons = document.querySelectorAll(".slider-btn");
+
+      let currentSlider = 1;
+
+      function manualNav(manual) {
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+
+          buttons.forEach((btn) => {
+            btn.classList.remove("active");
+          });
+        });
+
+        slides[manual].classList.add("active");
+        buttons[manual].classList.add("active");
+      }
+
+      buttons.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          console.log(i);
+          manualNav(i);
+          currentSlider = i;
+        });
+      });
+
+      var repeat = function (activeClass) {
+        let active = document.getElementsByClassName("active");
+        let i = 1;
+        var repeater = function () {
+          setTimeout(function () {
+            [...active].forEach(function (activeSlide) {
+              activeSlide.classList.remove("active");
+            });
+            slides[i].classList.add("active");
+            buttons[i].classList.add("active");
+            i++;
+            if (slides.length == i) {
+              i = 0;
+            }
+            if (i >= slides.length) {
+              return;
+            }
+            repeater();
+          }, 3000);
+        };
+        repeater();
+      };
+
+      repeat();
+    </script>
+  </body>
+</html>
